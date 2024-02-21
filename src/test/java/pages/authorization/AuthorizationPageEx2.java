@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.element;
 public class AuthorizationPageEx2 {
 
-    private final By EMAIL = By.xpath("//input[@name='email']");
-    private final By PASSWORD = By.xpath("//ibput[@name='password']");
+    private final By EMAIL = By.xpath("//input[@type='email']");
+    private final By PASSWORD = By.xpath("//input[@type='password']");
     private final By BUTTON = By.xpath("//button[contains(text(), 'Войти')]");
-    private final By LINK_REGISTRATION = By.xpath("//a[contains(text(), 'Зарегестрироваться')]");
+    private final By LINK_REGISTRATION = By.xpath("//a[contains(text(), 'Зарегистрироваться')]");////a[contains(text(), 'Зарегистрироваться')]"
     private final By LINK_FORGOT_PASSWORD = By.xpath("//a[contains(text(), 'Восстановить пароль')]");
 
     public SelenideElement getEmail() {
