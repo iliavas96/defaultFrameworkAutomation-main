@@ -1,20 +1,23 @@
 package test.authorization;
 
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import pages.authorization.AuthorizationPage;
-import pages.constructor.ConstructorPage;
+
 import services.authorization.AuthorizationService;
 
 import static com.codeborne.selenide.Condition.visible;
+import static org.testng.Assert.assertEquals;
 
-public class Authorization {  //публичный класс авторизация
+public class Authorization {  //тест класс для проверки авторизации
 
-  private final AuthorizationService authorizationService = new AuthorizationService(); //создает объект класса, у которого метод открывает сайт на страницу авторизации
-  private final AuthorizationPage authorizationPage = new AuthorizationPage(); // создает объект класса, в котором указаны необходимые поля ввода, кнопка и линки на восстановление пароля и регистрацию
-  private final ConstructorPage constructorPage = new ConstructorPage(); //почему то не импортировался.
+  private final AuthorizationService authorizationService = new AuthorizationService(); //создает объект класса AuthorizationServise
+  private final AuthorizationPage authorizationPage = new AuthorizationPage(); // создает объект класса AuthorizationPage
+
 
   @Test
-  public void checkAuthorization() {
+  public void checkAuthorization() {  // метод проверки авторизации
     String email = "alex20-03sh@mail.ru"; //вводимый емайл
     String password = "022093Aa"; //вводимый пароль
 
@@ -22,9 +25,9 @@ public class Authorization {  //публичный класс авторизац
     authorizationPage.setEmail(email); // вставляет емейл "alex20-03sh@mail.ru"
     authorizationPage.setPassword(password); // вставляет пароль "022093Aa"
     authorizationPage.getEnterButton().click(); // наводит на Кнопку Войти, click - нажать на кнопку
-    constructorPage.getTitle()
-        .shouldBe(visible.because("Пользователь не авторизован")); // не могу понять, не импортирует класс ConstructorPage. Но насколько я понял
-  }//  тут проиходит проверка, высветилась ли надпись, пользователь не авторизован? Но вот тут я не понимаю.
+    Selenide.sleep(3000);
+    assertEquals(WebDriverRunner.getWebDriver().getCurrentUrl(), "https://burger-frontend-6.prakticum-team.ru/");
+  }
 }
 
 
