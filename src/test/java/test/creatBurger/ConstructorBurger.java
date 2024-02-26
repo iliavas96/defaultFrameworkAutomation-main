@@ -1,10 +1,9 @@
 package test.creatBurger;
 
-import com.codeborne.selenide.Condition;
-import pages.construсtor.ConstructorPage;
 import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.Test;
 import pages.authorization.AuthorizationPage;
+import pages.construсtor.ConstructorPage;
 import services.authorization.AuthorizationService;
 import services.construcor.ConstructorService;
 
@@ -19,7 +18,8 @@ public class ConstructorBurger {
     private final AuthorizationService authorizationService = new AuthorizationService(); //создает объект класса AuthorizationServise
     private final AuthorizationPage authorizationPage = new AuthorizationPage(); // создает объект класса AuthorizationPage
 
-    @Test void checkConstructorBurger() {
+    @Test
+    void checkConstructorBurger() {
         String email = "alex20-03sh@mail.ru"; //вводимый емайл
         String password = "022093Aa"; //вводимый пароль
         authorizationService.openAutorizationPage();
@@ -32,43 +32,48 @@ public class ConstructorBurger {
                 "https://burger-frontend-6.prakticum-team.ru/"
         );
 
-        for (int i)
-        $(constructorPage.getButton_Ingredient(0))  //0 - индекс краторной булки
-                .dragAndDropTo(constructorPage.getBread_AdditionN_Area()); // Перетащить - добавить булку в конструктор
+        for (int i = 0; i < constructorPage
+                .listIngredient_One().size(); i++) {    //проверяет размер, не больше размера ArrayList ListIngridient_One
 
-        $(constructorPage.getButton_Ingredient(2))
-                .dragAndDropTo(constructorPage.getFilling_Addition_Area()); // Перетащить - добавить первый элемент набора ингридиентов
-
-        $(constructorPage.getButton_Ingredient(3))
-                .dragAndDropTo(constructorPage.getFilling_Addition_Area());// Перетащить - добавить второй элемент набора ингридиентов
-
-        $(constructorPage.getButton_Ingredient(4))
-                .dragAndDropTo(constructorPage.getFilling_Addition_Area());// Перетащить - добавить третий элемент набора ингридиентов
-
-        $(constructorPage.getButton_Ingredient(5))
-                .dragAndDropTo(constructorPage.getFilling_Addition_Area());// Перетащить - добавить четвертый элемент набора ингридиентов
-
-        $(constructorPage.getButton_Ingredient(11))
-                .dragAndDropTo(constructorPage.getFilling_Addition_Area());// Перетащить - добавить пятый элемент набора ингридиентов (соус)
-
-        $(constructorPage.getButton_Ingredient(12))
-                .dragAndDropTo(constructorPage.getFilling_Addition_Area());// Перетащить - добавить шестой элемент набора ингридиентов (соус)
+            $(constructorPage
+                    .getListIngredient_One(i))
+                    .dragAndDropTo(constructorPage
+                            .getFilling_Addition_Area()); //переносит элементы ArrayList  List_Ingredient_One в область добавления ингридиентов)
+        }
 
         /*Дальше идет проверка, добавления элементов.*/
 
-        for (int i = 0; i<7; i++) { //в арей листе 7 эллементов, по очереди их проверяет
-            $(constructorPage.getSetIngredient_One(i)).shouldBe(visible);
+        for (int i = 0; i < constructorPage
+                .setIngredient_One().size(); i++) { //проверяет размер, не больше размера ArrayList setIngridient_One
+            $(constructorPage
+                    .getSetIngredient_One(i))
+                    .shouldBe(visible); // проверяет наличия элемента на странице
+        }
+
+        /* Сравнение цены ингридиентов и общей цены */
+
+        int sumPrice = 0; //для суммы всех ингдредиентов
+
+        for (int i = 0;
+             i < constructorPage.priceIngredient_One().size(); i++) {// i меньше size ArrayList PRICE_INGREDIENT_ONE
+            sumPrice += Integer.parseInt(                            // Складывает общую стоимость. Переводит String в INTEGER и потом в int для дальнейшего сравнения
+                    constructorPage
+                            .getPriceIngredient_One(i)         //метод возвращает элемент ArrayList PriceIngridient_One
+                            .getText());                             //Читает текст
         }
 
 
-        System.out.println("ddd");
+        assertEquals(sumPrice,                           //Сравнивает два int - равна ли цена кажого отдельного эллемента - общей стоимости показанно на сайте
+                Integer.parseInt(               // Переводит String в INTEGER
+                        constructorPage
+                                .getTotalPrice()// Находит элемент TOTAL_PRICE
+                                .getText()));   // Читает его text.
 
 
-
+        System.out.println("Проверка");
 
 
     }
-
 
 
 }

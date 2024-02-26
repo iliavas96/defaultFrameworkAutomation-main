@@ -53,36 +53,40 @@ public class ConstructorPage {
         PRICE_INGREDIENT_ONE.add(By.xpath(
                 "//p[.='Краторная булка N-200i']/..//p[@class='text text_type_digits-default mr-2']")); //добавляет цену булки индекс 0
         PRICE_INGREDIENT_ONE.add(By.xpath(
-                "//p[.='Хрустящие минеральные кольца']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 1
+                "//p[.='Краторная булка N-200i']/..//p[@class='text text_type_digits-default mr-2']")); //добавляет цену булки индекс 1 (всего 2 булки)
         PRICE_INGREDIENT_ONE.add(By.xpath(
-                "//p[.='Плоды Фалленианского дерева']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 2
+                "//p[.='Хрустящие минеральные кольца']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 2
         PRICE_INGREDIENT_ONE.add(By.xpath(
-                "//p[.='Кристаллы марсианских альфа-сахаридов']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 3
+                "//p[.='Плоды Фалленианского дерева']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 3
         PRICE_INGREDIENT_ONE.add(By.xpath(
-                "//p[.='Мини-салат Экзо-Плантаго']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 4
+                "//p[.='Кристаллы марсианских альфа-сахаридов']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 4
         PRICE_INGREDIENT_ONE.add(By.xpath(
-                "//p[.='Соус Spicy-X']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену соуса индекс 5
+                "//p[.='Мини-салат Экзо-Плантаго']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 5
         PRICE_INGREDIENT_ONE.add(By.xpath(
-                "//p[.='Соус фирменный Space Sauce']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену соуса индекс 6
+                "//p[.='Соус Spicy-X']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену соуса индекс 6
+        PRICE_INGREDIENT_ONE.add(By.xpath(
+                "//p[.='Соус фирменный Space Sauce']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену соуса индекс 7
 
 
         PRICE_INGREDIENT_TWO.add(By.xpath(
          "//p[.='Флюоресцентная булка R2-D3']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену булки индекс 0
         PRICE_INGREDIENT_TWO.add(By.xpath(
-                "//p[.='Сыр с астероидной плесенью']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 1
+                "//p[.='Флюоресцентная булка R2-D3']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену булки индекс 1
         PRICE_INGREDIENT_TWO.add(By.xpath(
-                "//p[.='Филе Люминесцентного тетраодонтимформа']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 2
+                "//p[.='Сыр с астероидной плесенью']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 2
         PRICE_INGREDIENT_TWO.add(By.xpath(
-                "//p[.='Мясо бессмертных моллюсков Protostomia']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 3
+                "//p[.='Филе Люминесцентного тетраодонтимформа']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 3
         PRICE_INGREDIENT_TWO.add(By.xpath(
-                "//p[.='Говяжий метеорит (отбивная)']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 4
+                "//p[.='Мясо бессмертных моллюсков Protostomia']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 4
         PRICE_INGREDIENT_TWO.add(By.xpath(
-                "//p[.='Биокотлета из марсианской Магнолии']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 5
+                "//p[.='Говяжий метеорит (отбивная)']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 5
+        PRICE_INGREDIENT_TWO.add(By.xpath(
+                "//p[.='Биокотлета из марсианской Магнолии']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену начинки индекс 6
 
         PRICE_INGREDIENT_TWO.add(By.xpath(
-                "//p[.='Соус традиционный галактический']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену соуса индекс 6
+                "//p[.='Соус традиционный галактический']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену соуса индекс 7
         PRICE_INGREDIENT_TWO.add(By.xpath(
-                "//p[.='Соус с шипами Антарианского плоскоходца']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену соуса индекс 7
+                "//p[.='Соус с шипами Антарианского плоскоходца']/..//p[@class='text text_type_digits-default mr-2']")); // добавляет цену соуса индекс 8
     }
 
     /* Список элементов по xpath - ингридиентов после добавления их в конструктор бургера по тест кейсу №1-9-1*/
@@ -92,12 +96,12 @@ public class ConstructorPage {
         SET_INGREDIENT_ONE.add(By.xpath(
                 "//div[@class='burger-constructor_element__10R7L mb-4 mr-4']//span[.='Краторная булка N-200i (верх)']"));//  добавление элемента - булка
 
-        SET_INGREDIENT_ONE.add(By.xpath("//li[@data-handler-id='T17']//span[.='Хрустящие минеральные кольца']"));//добавление элемента начинки
-        SET_INGREDIENT_ONE.add(By.xpath("//li[@data-handler-id='T19']//span[.='Плоды Фалленианского дерева']")); //добавление элемента начинки
-        SET_INGREDIENT_ONE.add(By.xpath("//li[@data-handler-id='T21']//span[.='Кристаллы марсианских альфа-сахаридов']")); //добавление элемента начинки
-        SET_INGREDIENT_ONE.add(By.xpath("//li[@data-handler-id='T23']//span[.='Мини-салат Экзо-Плантаго']"));//добавление элемента начинки
-        SET_INGREDIENT_ONE.add(By.xpath("//li[@data-handler-id='T25']//span[.='Соус Spicy-X']"));//добавление элемента начинки
-        SET_INGREDIENT_ONE.add(By.xpath("//li[@data-handler-id='T27']//span[.='Соус фирменный Space Sauce']"));//добавление элемента начинки
+        SET_INGREDIENT_ONE.add(By.xpath("//ul[@class='burger-constructor_elements__1mnPz']//span[.='Хрустящие минеральные кольца']"));//добавление элемента начинки
+        SET_INGREDIENT_ONE.add(By.xpath("//ul[@class='burger-constructor_elements__1mnPz']//span[.='Плоды Фалленианского дерева']")); //добавление элемента начинки
+        SET_INGREDIENT_ONE.add(By.xpath("//ul[@class='burger-constructor_elements__1mnPz']//span[.='Кристаллы марсианских альфа-сахаридов']")); //добавление элемента начинки
+        SET_INGREDIENT_ONE.add(By.xpath("//ul[@class='burger-constructor_elements__1mnPz']//span[.='Мини-салат Экзо-Плантаго']"));//добавление элемента начинки
+        SET_INGREDIENT_ONE.add(By.xpath("//ul[@class='burger-constructor_elements__1mnPz']//span[.='Соус Spicy-X']"));//добавление элемента начинки
+        SET_INGREDIENT_ONE.add(By.xpath("//ul[@class='burger-constructor_elements__1mnPz']//span[.='Соус фирменный Space Sauce']"));//добавление элемента начинки
         SET_INGREDIENT_ONE.add(By.xpath(
                 "//div[@class='constructor-element constructor-element_pos_bottom']//span[.='Краторная булка N-200i (низ)']")); // добавление элемента - булка
 
@@ -187,6 +191,10 @@ public class ConstructorPage {
 
     public ArrayList<By> priceIngredient_Two () {  //метод возвращает ArrayList цен ингридиентов 2
         return PRICE_INGREDIENT_TWO;
+    }
+
+    public ArrayList<By> setIngredient_One () {  //метод возвращает ArrayList  ингридиентов 1 в конструкторе бургеров (после добавления)
+        return SET_INGREDIENT_ONE;
     }
 
 
