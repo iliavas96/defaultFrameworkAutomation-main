@@ -41,4 +41,5 @@ public class AuthorizationPage {  //класс страницы авториза
   public SelenideElement getLinkForgotPassword() {
     return element(LINK_FORGOT_PASSWORD);
   } //геттер. возвращает element, с которым можно взаиможействовать на странице (линк восстановления пароля)
+
 }
