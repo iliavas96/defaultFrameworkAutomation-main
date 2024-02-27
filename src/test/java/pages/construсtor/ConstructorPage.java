@@ -20,6 +20,9 @@ public class ConstructorPage {
     private final By BREAD_ADDITION_AREA = By.xpath("//div[.='Выберите булки']"); // область добавления булки "Выберете булки"
     private final By FILLING_ADDITION_AREA = By.xpath("//ul[@class='burger-constructor_elements__1mnPz']"); // область добавления начинки "Выберете начинку", туда же соусы
     private final By TOTAL_PRICE = By.xpath("//p[@class='text burger-constructor_text__1C_uq mr-2']"); // находит общую сумму заказа
+    private final By ORDER_READY = By.xpath("//p[.='Ваш заказ начали готовить']");  // находит запись ваш заказ начали готовить
+    private final By NUMBER_ORDER = By.xpath("//h2[@class='order-details_title__FoYOr text text_type_digits-large mt-2 mb-4']"); // находит номер заказа
+    private final By CLOSE_WINDOW_ID = By.xpath("//button[@class='modal_button__3_zvg']");// находит элемент, закрывающий окно номера заказа
 
     /* Список  xpath ингридиентов*/
     private static final ArrayList<By> LIST_INGREDIENT_ONE = new ArrayList<>(); //Список  ингридиентов тест кейс №1-9-1
@@ -143,6 +146,23 @@ public class ConstructorPage {
     public SelenideElement getFilling_Addition_Area() {
         return element(FILLING_ADDITION_AREA); // геттер. возвращает element "область добавления начинки и соусы", с которым можно взаиможействовать на странице
     }
+
+    public SelenideElement getOrder_Ready() {
+        return element(ORDER_READY); // геттер. возвращает element - надпись ЗАКАЗ ГОТОВИТСЯ
+    }
+
+    public SelenideElement getNumber_Order() {
+        return element(NUMBER_ORDER); // геттер. возвращает element - НОМЕР ЗАКАЗА
+    }
+
+    public SelenideElement getClose_Window() {
+        return element(CLOSE_WINDOW_ID); // геттер. возвращает element - КНОПКА ЗАКРЫТИЯ ОКНА ЗАКАЗА
+    }
+
+
+
+
+    /* Методы с ArrayList */
 
     public SelenideElement getTotalPrice() {
         return element(TOTAL_PRICE); // геттер. возвращает element "с общей ценой заказа", из которого можно взять int для сравнения цен
