@@ -26,10 +26,7 @@ public class Registration {
 
         sleep(3000); // тайм аут на 3 с.
 
-        assertEquals(WebDriverRunner.url()
-                , // сравнивает url //проверяет, что после клика, был переход на основную страницу
-                "https://burger-frontend-6.prakticum-team.ru/"
-        );
+        assertEquals(WebDriverRunner.url(), "https://burger-frontend-6.prakticum-team.ru/");
 
         assertEquals(registrationPage.getUserCabinet().getText(), name); // проверяет что имя введенное в поле Name равняется тому, что показано на линке личный кабинет
 
