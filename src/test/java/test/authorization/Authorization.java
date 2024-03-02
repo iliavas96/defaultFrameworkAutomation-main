@@ -23,9 +23,11 @@ public class Authorization {  //тест класс для проверки ав
         authorizationPage.setEmail(email); // вставляет емейл "alex20-03sh@mail.ru"
         authorizationPage.setPassword(password); // вставляет пароль "022093Aa"
         authorizationPage.getEnterButton().click(); // наводит на Кнопку Войти, click - нажать на кнопку
+
         sleep(3000); // тайм аут на 3 с.
+
         assertEquals(
-                WebDriverRunner.getWebDriver().getCurrentUrl(), // сравнивает url
+                WebDriverRunner.url(), // сравнивает url
                 "https://burger-frontend-6.prakticum-team.ru/"
         );
     }

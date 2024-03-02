@@ -11,7 +11,7 @@ public class OrderFeedPage {
 
     private final String AREA_ID = ".feed-info_list_item__yrN7o"; // css селектор того же элемента. Я их просто еще не учил, сделал пока так
 
-    public String ger_All_ID() { // возвращает css селектор
+    public String get_All_ID() { // возвращает css селектор
         return AREA_ID;
     }
 
