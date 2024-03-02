@@ -1,9 +1,8 @@
 package base;
 
-
 public class BaseService {
 
-  public final String baseUrl = "https://burger-frontend-6.prakticum-team.ru"; // ссылка на сайт бургер
+    public final String baseUrl = "https://burger-frontend-6.prakticum-team.ru"; // ссылка на сайт бургер
 
 
 }
