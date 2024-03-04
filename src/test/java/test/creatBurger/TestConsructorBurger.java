@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.webdriver;
 
 public class TestConsructorBurger extends ConstructorBurger {
     final private ConstructorPage constructorPage = new ConstructorPage();
-
     private final Authorization authorization = new Authorization();
     private final ConstructorBurger constructorBurger = new ConstructorBurger();
     private final OrderFeedPage orderFeedPage = new OrderFeedPage();
@@ -23,19 +22,17 @@ public class TestConsructorBurger extends ConstructorBurger {
 
         authorization.checkAuthorization();
 
-        constructorBurger.dragIngredient();
+        constructorBurger.addIngredientsByDrag();
         constructorBurger.compareIngredient();
         constructorBurger.comparePrice();
         constructorPage.getButtonCreateOrder().click();
 
-        sleep(15000);
+        sleep(15000); //бывает долгая загрузка окна заказа
         String orderId = constructorPage.getNumberOrder().text();
         constructorPage.getCloseWindow().click();
 
         constructorPage.getLinkOrderFeed().click();
         ElementsCollection orders = new ElementsCollection(webdriver().driver(), orderFeedPage.getAllId());
-        orderFeedService.checkElementList(orders, orderId);
+        orderFeedService.checkElementsList(orders, orderId);
     }
 }
-
-

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import static com.codeborne.selenide.Selenide.element;
 
 public class ConstructorPage {
-    /* Переменные*/
+
 
     private final By LINK_CONSTRUCTOR = By.xpath("//a[@aria-current='page']");
     private final By LINK_ORDER_FEED = By.xpath("//a[@href='/feed']");
@@ -107,10 +107,7 @@ public class ConstructorPage {
         SET_INGREDIENT_ONE.add(By.xpath("//ul[@class='burger-constructor_elements__1mnPz']//span[.='Соус фирменный Space Sauce']"));
         SET_INGREDIENT_ONE.add(By.xpath(
                 "//div[@class='constructor-element constructor-element_pos_bottom']//span[.='Краторная булка N-200i (низ)']"));
-
     }
-
-
     public SelenideElement getLinkConstructor() {
         return element(LINK_CONSTRUCTOR);
     }
@@ -158,9 +155,6 @@ public class ConstructorPage {
     public SelenideElement getCloseWindow() {
         return element(CLOSE_WINDOW_ID);
     }
-
-
-
 
     /* Методы с ArrayList */
 
@@ -216,6 +210,5 @@ public class ConstructorPage {
     public ArrayList<By> setIngredientOne () {  //метод возвращает ArrayList  ингридиентов 1 в конструкторе бургеров (после добавления)
         return SET_INGREDIENT_ONE;
     }
-
 
 }

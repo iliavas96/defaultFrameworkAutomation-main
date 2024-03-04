@@ -11,7 +11,7 @@ public class OrderFeedService extends BaseService {
         open(baseUrl + "/feed");
     }
 
-    public void checkElementList(ElementsCollection orders, String orderId) {
+    public void checkElementsList(ElementsCollection orders, String orderId) {
         String found = "0";
         for (int i = 0; i < orders.size(); i++) {
             if (orders

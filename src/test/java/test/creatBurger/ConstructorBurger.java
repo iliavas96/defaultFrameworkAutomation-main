@@ -15,7 +15,7 @@ import static org.testng.Assert.assertEquals;
 public class ConstructorBurger {
     final private ConstructorPage constructorPage = new ConstructorPage();
 
-    void dragIngredient() { //добаввление ингридиентов в конструктор бургеров
+    void addIngredientsByDrag() {
         for (int i = 0; i < constructorPage
                 .listIngredientOne().size(); i++) {
             $(constructorPage
