@@ -8,10 +8,10 @@ import services.authorization.AuthorizationService;
 import static com.codeborne.selenide.Selenide.sleep;
 import static org.testng.Assert.assertEquals;
 
-public class Authorization {  //тест класс для проверки авторизации
+public class Authorization {
 
-    private final AuthorizationService authorizationService = new AuthorizationService(); //создает объект класса AuthorizationServise
-    private final AuthorizationPage authorizationPage = new AuthorizationPage(); // создает объект класса AuthorizationPage
+    private final AuthorizationService authorizationService = new AuthorizationService();
+    private final AuthorizationPage authorizationPage = new AuthorizationPage();
 
 
     @Test
