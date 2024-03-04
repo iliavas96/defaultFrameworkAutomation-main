@@ -15,9 +15,9 @@ public class Registration {
 
     @Test
     public void checkRegistration() {
-        String name = "ILIA"; //имя
-        String email = "iliavaswork+" + (int) (Math.random() * 100000) + "@gmail.com"; //Math для создания новой почты
-        String password = "qwe123zxctyu"; // пароль
+        String name = "ILIA";
+        String email = "iliavaswork+" + (int) (Math.random() * 100000) + "@gmail.com";
+        String password = "qwe123zxctyu";
 
         registrationService.openRegistrationPage();
         registrationPage.setName(name);
@@ -25,7 +25,7 @@ public class Registration {
         registrationPage.setPassword(password);
         registrationPage.getButton().click();
 
-        sleep(3000); // тайм аут на 3 с.
+        sleep(3000); // без тайм аути не успевает прогрузиться страница
 
         webdriver().shouldHave(url("https://burger-frontend-6.prakticum-team.ru/"));
         assertEquals(registrationPage.getUserCabinet().getText(), name);

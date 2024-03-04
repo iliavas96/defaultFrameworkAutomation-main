@@ -25,7 +25,7 @@ public class RegistrationPage {
         return element(NAME);
     }
 
-    public void setName(String name) { // сеттер вводит ИМЯ
+    public void setName(String name) {
         getName().setValue(name);
     }
 
@@ -33,19 +33,19 @@ public class RegistrationPage {
         return element(EMAIL);
     }
 
-    public void setEmail(String email) { // сеттер вводит ЕМАИЛ
+    public void setEmail(String email) {
         getEmail().setValue(email);
     }
 
-    public SelenideElement getPassword() {  //геттер, возврашает элемент с которым можно взаимоджействовать, наводит на ПАРОЛЬ
+    public SelenideElement getPassword() {
         return element(PASSWORD);
     }
 
-    public void setPassword(String password) { // сеттер вводит ПАРОЛЬ
+    public void setPassword(String password) {
         getPassword().setValue(password);
     }
 
-    public SelenideElement getButton() { // геттер, возврашает элемент с которым можно взаимоджействовать, наводит на кнопку РЕГИСТРАЦИИ
+    public SelenideElement getButton() {
         return element(BUTTON_REGISTRATION);
     }
 }
