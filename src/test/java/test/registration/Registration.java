@@ -6,6 +6,8 @@ import pages.registration.RegistrationPage;
 import services.registration.RegistrationService;
 
 import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.WebDriverConditions.url;
 import static org.testng.Assert.assertEquals;
 
 public class Registration {
@@ -13,7 +15,7 @@ public class Registration {
     private final RegistrationPage registrationPage = new RegistrationPage(); //создает объект класса
 
     @Test
-    public void checkAuthorization() {
+    public void checkRegistration() {
         String name = "ILIA"; //имя
         String email = "iliavaswork+" + (int) (Math.random() * 100000) + "@gmail.com"; //емаил, MATH random добавляет цифры после индивидуального адреса
         String password = "qwe123zxctyu"; // пароль
@@ -26,7 +28,7 @@ public class Registration {
 
         sleep(3000); // тайм аут на 3 с.
 
-        assertEquals(WebDriverRunner.url(), "https://burger-frontend-6.prakticum-team.ru/");
+        webdriver().shouldHave(url("https://burger-frontend-6.prakticum-team.ru/"));
         assertEquals(registrationPage.getUserCabinet().getText(), name); // проверяет что имя введенное в поле Name равняется тому, что показано на линке личный кабинет
 
     }
