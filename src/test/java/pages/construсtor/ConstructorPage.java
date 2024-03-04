@@ -119,43 +119,43 @@ public class ConstructorPage {
         return element(LINK_ORDER_FEED); // геттер. возвращает element "Лента заказов", с которым можно взаиможействовать на странице
     }
 
-    public SelenideElement getLink_Personal_Cabinet() {
+    public SelenideElement getLinkPersonalCabinet() {
         return element(LINK_PERSONAL_CABINET); // геттер. возвращает element "Личный кабинет", с которым можно взаиможействовать на странице
     }
 
-    public SelenideElement getButton_Create_Order() {
+    public SelenideElement getButtonCreateOrder() {
         return element(BUTTON_CREATE_ORDER); // геттер. возвращает element "Оформить заказ", с которым можно взаиможействовать на странице
     }
 
-    public SelenideElement getTab_Name_Bread() {
+    public SelenideElement getTabNameBread() {
         return element(TAB_NAME_BREAD); // геттер. возвращает element "кнопка таблицы Булки", с которым можно взаиможействовать на странице
     }
 
-    public SelenideElement getTab_Name_Filing() {
+    public SelenideElement getTabNameFiling() {
         return element(TAB_NAME_FILLING); // геттер. возвращает element "кнопка таблицы Начинки", с которым можно взаиможействовать на странице
     }
 
-    public SelenideElement getTab_Name_Sauce() {
+    public SelenideElement getTabNameSauce() {
         return element(TAB_NAME_SAUCE); // геттер. возвращает element "кнопка таблицы соусы", с которым можно взаиможействовать на странице
     }
 
-    public SelenideElement getBread_AdditionN_Area() {
+    public SelenideElement getBreadAdditionNArea() {
         return element(BREAD_ADDITION_AREA); // геттер. возвращает element "область добавления булки", с которым можно взаиможействовать на странице
     }
 
-    public SelenideElement getFilling_Addition_Area() {
+    public SelenideElement getFillingAdditionArea() {
         return element(FILLING_ADDITION_AREA); // геттер. возвращает element "область добавления начинки и соусы", с которым можно взаиможействовать на странице
     }
 
-    public SelenideElement getOrder_Ready() {
+    public SelenideElement getOrderReady() {
         return element(ORDER_READY); // геттер. возвращает element - надпись ЗАКАЗ ГОТОВИТСЯ
     }
 
-    public SelenideElement getNumber_Order() {
+    public SelenideElement getNumberOrder() {
         return element(NUMBER_ORDER); // геттер. возвращает element - НОМЕР ЗАКАЗА
     }
 
-    public SelenideElement getClose_Window() {
+    public SelenideElement getCloseWindow() {
         return element(CLOSE_WINDOW_ID); // геттер. возвращает element - КНОПКА ЗАКРЫТИЯ ОКНА ЗАКАЗА
     }
 
@@ -168,52 +168,52 @@ public class ConstructorPage {
         return element(TOTAL_PRICE); // геттер. возвращает element "с общей ценой заказа", из которого можно взять int для сравнения цен
     }
 
-    public SelenideElement getListIngredient_One(int index) {
+    public SelenideElement getListIngredientOne(int index) {
         return element(
                 LIST_INGREDIENT_ONE.get(index)  //возвращает элемент из списка ингридиентов 1. Параметры index - индекс ингридиента в  ArrayList. тест кейс №1-9-1
         );
     }
 
-    public SelenideElement getListIngredient_Two(int index) {
+    public SelenideElement getListIngredientTwo(int index) {
         return element(
                 LIST_INGREDIENT_TWO.get(index)  //возвращает элемент из списка ингридиентов 1. Параметры index - индекс ингридиента в  ArrayList. тест кейс №1-9-1
         );
     }
 
-    public SelenideElement getPriceIngredient_One(int index) {
+    public SelenideElement getPriceIngredientOne(int index) {
         return element(
                 PRICE_INGREDIENT_ONE.get(index)  //возвращает элемент из списка цен ингридиентов 1. Параметры index - индекс ингридиента в  ArrayList. Можно взять int для сравнения цен
         );
     }
 
-    public SelenideElement getPriceIngredient_Two(int index) {
+    public SelenideElement getPriceIngredientTwo(int index) {
         return element(
                 PRICE_INGREDIENT_TWO.get(index)  //возвращает элемент из списка цен ингридиентов 2. Параметры index - индекс ингридиента в  ArrayList. Можно взять int для сравнения цен
         );
     }
 
-    public SelenideElement getSetIngredient_One(int index) {
+    public SelenideElement getSetIngredientOne(int index) {
         return element(
                 SET_INGREDIENT_ONE.get(index)  //возвращает элемент из списка ингридиентов. Для проверки конструктора бугеров.
         );
     }
-    public ArrayList<By> listIngredient_One () {  //метод возвращает ArrayList ингридиентов 1
+    public ArrayList<By> listIngredientOne () {  //метод возвращает ArrayList ингридиентов 1
         return LIST_INGREDIENT_ONE;
     }
 
-    public ArrayList<By> listIngredient_Two () {  //метод возвращает ArrayList ингридиентов 2
+    public ArrayList<By> listIngredientTwo () {  //метод возвращает ArrayList ингридиентов 2
         return LIST_INGREDIENT_TWO;
     }
 
-    public ArrayList<By> priceIngredient_One () {  //метод возвращает ArrayList цен ингридиентов 1
+    public ArrayList<By> priceIngredientOne () {  //метод возвращает ArrayList цен ингридиентов 1
         return PRICE_INGREDIENT_ONE;
     }
 
-    public ArrayList<By> priceIngredient_Two () {  //метод возвращает ArrayList цен ингридиентов 2
+    public ArrayList<By> priceIngredientTwo () {  //метод возвращает ArrayList цен ингридиентов 2
         return PRICE_INGREDIENT_TWO;
     }
 
-    public ArrayList<By> setIngredient_One () {  //метод возвращает ArrayList  ингридиентов 1 в конструкторе бургеров (после добавления)
+    public ArrayList<By> setIngredientOne () {  //метод возвращает ArrayList  ингридиентов 1 в конструкторе бургеров (после добавления)
         return SET_INGREDIENT_ONE;
     }
 

@@ -21,19 +21,19 @@ public class TestConsructorBurger extends ConstructorBurger {
     @Test
     public void checkConstructorBurger() {
 
-        authorization.checkAuthorization(); // авторизация
+        authorization.checkAuthorization();
 
-        constructorBurger.dragIngredient(); //переносит ингридиенты в конструктор бургера
-        constructorBurger.compareIngredient(); //проверяет, что ингридиенты отобразились
-        constructorBurger.comparePrice();// сравнивает цены
-        constructorPage.getButton_Create_Order().click(); //нажимает на кнопку оформить заказ
+        constructorBurger.dragIngredient();
+        constructorBurger.compareIngredient();
+        constructorBurger.comparePrice();
+        constructorPage.getButtonCreateOrder().click();
 
-        sleep(15000); //долгая загрузка бывает
-        String orderId = constructorPage.getNumber_Order().text(); //читает номер заказа и переводит его в int
-        constructorPage.getClose_Window().click(); // закрывает окно с id заказа
+        sleep(15000);
+        String orderId = constructorPage.getNumberOrder().text();
+        constructorPage.getCloseWindow().click();
 
-        constructorPage.getLinkOrderFeed().click(); // переходит в Ленту заказов
-        ElementsCollection orders = new ElementsCollection(webdriver().driver(), orderFeedPage.get_All_ID());
+        constructorPage.getLinkOrderFeed().click();
+        ElementsCollection orders = new ElementsCollection(webdriver().driver(), orderFeedPage.getAllId());
         orderFeedService.checkElementList(orders, orderId);
     }
 }

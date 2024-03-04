@@ -15,34 +15,32 @@ import static org.testng.Assert.assertEquals;
 public class ConstructorBurger {
     final private ConstructorPage constructorPage = new ConstructorPage();
 
-
-    void dragIngredient () { //добаввление ингридиентов в конструктор бургеров
+    void dragIngredient() { //добаввление ингридиентов в конструктор бургеров
         for (int i = 0; i < constructorPage
-                .listIngredient_One().size(); i++)
-        {
+                .listIngredientOne().size(); i++) {
             $(constructorPage
-                    .getListIngredient_One(i))
+                    .getListIngredientOne(i))
                     .dragAndDropTo(
-                            constructorPage.getFilling_Addition_Area());
+                            constructorPage.getFillingAdditionArea());
         }
     }
 
-      void compareIngredient() { // метод проверяет добавились ли ингрилиенты в конструктор
+    void compareIngredient() {
         for (int i = 0; i < constructorPage
-                .setIngredient_One().size(); i++) {
-                    $(constructorPage
-                        .getSetIngredient_One(i))
-                        .shouldBe(visible);
+                .setIngredientOne().size(); i++) {
+            constructorPage
+                    .getSetIngredientOne(i)
+                    .shouldBe(visible);
         }
     }
 
     void comparePrice() { //сравнение суммы цен отдельных ингридиентов и общей цены показанной на сайте
         int sumPrice = 0;
         for (int i = 0;
-             i < constructorPage.priceIngredient_One().size(); i++) {
+             i < constructorPage.priceIngredientOne().size(); i++) {
             sumPrice += Integer.parseInt(
                     constructorPage
-                            .getPriceIngredient_One(i)
+                            .getPriceIngredientOne(i)
                             .getText());
 
         }
@@ -51,5 +49,5 @@ public class ConstructorBurger {
                         constructorPage
                                 .getTotalPrice()
                                 .getText()));
-        }
+    }
 }

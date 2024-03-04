@@ -8,27 +8,27 @@ import services.authorization.AuthorizationService;
 import static com.codeborne.selenide.Selenide.sleep;
 import static org.testng.Assert.assertEquals;
 
-public class Authorization {  //тест класс для проверки авторизации
+public class Authorization {
 
-    private final AuthorizationService authorizationService = new AuthorizationService(); //создает объект класса AuthorizationServise
-    private final AuthorizationPage authorizationPage = new AuthorizationPage(); // создает объект класса AuthorizationPage
+    private final AuthorizationService authorizationService = new AuthorizationService();
+    private final AuthorizationPage authorizationPage = new AuthorizationPage();
 
 
     @Test
-    public void checkAuthorization() {  // метод проверки авторизации
-        String email = "alex20-03sh@mail.ru"; //вводимый емайл
-        String password = "022093Aa"; //вводимый пароль
+    public void checkAuthorization() {
+        String email = "alex20-03sh@mail.ru";
+        String password = "022093Aa";
 
-        authorizationService.openAutorizationPage(); //открывает страницу с авторизацией
-        authorizationPage.setEmail(email); // вставляет емейл "alex20-03sh@mail.ru"
-        authorizationPage.setPassword(password); // вставляет пароль "022093Aa"
-        authorizationPage.getEnterButton().click(); // наводит на Кнопку Войти, click - нажать на кнопку
+        authorizationService.openAutorizationPage();
+        authorizationPage.setEmail(email);
+        authorizationPage.setPassword(password);
+        authorizationPage.getEnterButton().click();
 
-        sleep(3000); // тайм аут на 3 с.
+        sleep(3000);
 
         assertEquals(
-                WebDriverRunner.url(), // сравнивает url
-                "https://burger-frontend-6.prakticum-team.ru/"
+                WebDriverRunner.url(),
+                "https://burger-frontend-6.prakticum-team.ru/", "URL должен быть - 'https://burger-frontend-6.prakticum-team.ru/'"
         );
     }
 }
