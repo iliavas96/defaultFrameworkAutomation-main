@@ -1,4 +1,4 @@
-package api.Pojo.Post.unLogin;
+package api.Pojo.Post.unsuccessfulLogin;
 
 public class UnLogResponse {
     private String error;

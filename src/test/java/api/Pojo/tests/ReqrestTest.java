@@ -6,9 +6,9 @@ import api.Pojo.Post.create.CreateRequest;
 import api.Pojo.Post.create.CreateResponce;
 import api.Pojo.Post.registrations.Registration;
 import api.Pojo.Post.registrations.SuccessRegistration;
-import api.Pojo.Post.unLogin.UnLogResponse;
-import api.Pojo.Post.unLogin.UnLoginRequest;
 import api.Pojo.Post.unRegistration.UnSuccessRegistration;
+import api.Pojo.Post.unsuccessfulLogin.UnLogResponse;
+import api.Pojo.Post.unsuccessfulLogin.UnsuccessfulLoginRequest;
 import api.Pojo.Put.userTime.UserTime;
 import api.Pojo.Put.userTime.UserTimeResponse;
 import api.Pojo.specifications.Specifications;
@@ -168,10 +168,10 @@ public class ReqrestTest {
     }
 
     @Test
-    public void unLogin() {
+    public void unsuccessfulLogin() {
         Specifications.instalSpecification(Specifications.requestSpec(URL),
                 Specifications.responseError400());
-        UnLoginRequest request = new UnLoginRequest("peter@klaven");
+        UnsuccessfulLoginRequest request = new UnsuccessfulLoginRequest("peter@klaven");
         String error = "Missing password";
         UnLogResponse unLog = given()
                 .body(request)
