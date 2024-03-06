@@ -13,7 +13,6 @@ public class Authorization {
     private final AuthorizationService authorizationService = new AuthorizationService();
     private final AuthorizationPage authorizationPage = new AuthorizationPage();
 
-
     @Test
     public void checkAuthorization() {
         String email = "iliavaswork+123123@gmail.com";

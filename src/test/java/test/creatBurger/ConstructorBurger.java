@@ -1,53 +1,44 @@
 package test.creatBurger;
 
 
-import pages.authorization.AuthorizationPage;
+import com.codeborne.selenide.ElementsCollection;
 import pages.construсtor.ConstructorPage;
-import services.authorization.AuthorizationService;
-import services.construcor.ConstructorService;
-import test.authorization.Authorization;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-
+import static com.codeborne.selenide.Selenide.webdriver;
 import static org.testng.Assert.assertEquals;
 
 public class ConstructorBurger {
     final private ConstructorPage constructorPage = new ConstructorPage();
 
     void addIngredientsByDrag() {
-        for (int i = 0; i < constructorPage
-                .listIngredientOne().size(); i++) {
-            $(constructorPage
-                    .getListIngredientOne(i))
-                    .dragAndDropTo(
-                            constructorPage.getFillingAdditionArea());
-        }
+        constructorPage.getIngredient("Краторная").dragAndDropTo(constructorPage.getFillingAdditionArea());
+        constructorPage.getIngredient("Хрустящие").dragAndDropTo(constructorPage.getFillingAdditionArea());
+        constructorPage.getIngredient("Плоды").dragAndDropTo(constructorPage.getFillingAdditionArea());
+        constructorPage.getIngredient("Кристаллы").dragAndDropTo(constructorPage.getFillingAdditionArea());
+        constructorPage.getIngredient("салат").dragAndDropTo(constructorPage.getFillingAdditionArea());
+        constructorPage.getIngredient("Spicy").dragAndDropTo(constructorPage.getFillingAdditionArea());
+        constructorPage.getIngredient("Space").dragAndDropTo(constructorPage.getFillingAdditionArea());
     }
 
     void compareIngredient() {
-        for (int i = 0; i < constructorPage
-                .setIngredientOne().size(); i++) {
-            constructorPage
-                    .getSetIngredientOne(i)
-                    .shouldBe(visible);
-        }
+
+        ElementsCollection elements = new ElementsCollection(webdriver().driver(), constructorPage.getAllPrice());
+        elements.stream().forEach(x -> x.shouldBe(visible));
     }
 
-    void comparePrice() { //сравнение суммы цен отдельных ингридиентов и общей цены показанной на сайте
-        int sumPrice = 0;
-        for (int i = 0;
-             i < constructorPage.priceIngredientOne().size(); i++) {
-            sumPrice += Integer.parseInt(
-                    constructorPage
-                            .getPriceIngredientOne(i)
-                            .getText());
+    void comparePrice() {
+        AtomicInteger sumPrice = new AtomicInteger();
+        ElementsCollection elements = new ElementsCollection(webdriver().driver(), constructorPage.getAllPrice());
+        elements.forEach(x -> sumPrice.addAndGet(Integer.parseInt(x.text())));
 
-        }
-        assertEquals(sumPrice,
+        assertEquals(sumPrice.get(),
                 Integer.parseInt(
                         constructorPage
                                 .getTotalPrice()
-                                .getText()));
+                                .getText()), "Не сходится сумма всех ингридиентов и общая цена");
+
     }
 }
