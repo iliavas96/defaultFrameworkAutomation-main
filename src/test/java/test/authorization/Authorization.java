@@ -16,8 +16,8 @@ public class Authorization {
 
     @Test
     public void checkAuthorization() {
-        String email = "alex20-03sh@mail.ru";
-        String password = "022093Aa";
+        String email = "iliavaswork+123123@gmail.com";
+        String password = "qwezxc";
 
         authorizationService.openAutorizationPage();
         authorizationPage.setEmail(email);
