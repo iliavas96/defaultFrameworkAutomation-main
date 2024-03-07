@@ -34,6 +34,5 @@ public class TestConsructorBurger extends ConstructorBurger {
         constructorPage.getLinkOrderFeed().click();
         ElementsCollection orders = new ElementsCollection(webdriver().driver(), orderFeedPage.getAllId());
         orderFeedService.checkElementsList(orders, orderId);
-        System.out.println(0);;
     }
 }
