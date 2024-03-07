@@ -32,6 +32,7 @@ public class TestConstructorBurger extends ConstructorBurger {
         constructorPage.getCloseWindow().click();
 
         constructorPage.getLinkOrderFeed().click();
+
         ElementsCollection orders = new ElementsCollection(webdriver().driver(), orderFeedPage.getAllId());
         orderFeedService.checkElementsList(orders, orderId);
     }
