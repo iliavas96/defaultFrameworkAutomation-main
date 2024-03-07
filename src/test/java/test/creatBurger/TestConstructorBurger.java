@@ -10,7 +10,7 @@ import test.authorization.Authorization;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.Selenide.webdriver;
 
-public class TestConsructorBurger extends ConstructorBurger {
+public class TestConstructorBurger extends ConstructorBurger {
     final private ConstructorPage constructorPage = new ConstructorPage();
     private final Authorization authorization = new Authorization();
     private final ConstructorBurger constructorBurger = new ConstructorBurger();
