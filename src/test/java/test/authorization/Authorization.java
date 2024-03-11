@@ -13,19 +13,20 @@ public class Authorization {
     private final AuthorizationService authorizationService = new AuthorizationService();
     private final AuthorizationPage authorizationPage = new AuthorizationPage();
 
-
     @Test
     public void checkAuthorization() {
-        String email = "alex20-03sh@mail.ru";
-        String password = "022093Aa";
+        String email = "iliavaswork+123123@gmail.com";
+        String password = "qwezxc";
 
         authorizationService.openAutorizationPage();
         authorizationPage.setEmail(email);
         authorizationPage.setPassword(password);
         authorizationPage.getEnterButton().click();
+
         sleep(3000);
+
         assertEquals(
-                WebDriverRunner.getWebDriver().getCurrentUrl(),
+                WebDriverRunner.url(),
                 "https://burger-frontend-6.prakticum-team.ru/", "URL должен быть - 'https://burger-frontend-6.prakticum-team.ru/'"
         );
     }
