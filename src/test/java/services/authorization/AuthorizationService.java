@@ -8,5 +8,5 @@ public class AuthorizationService extends BaseService {
 
   public void openAutorizationPage() {
     open(baseUrl + "/login");
-  }
+  } // открыть сайт и авторизоваться
 }
